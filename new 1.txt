@@ -41,7 +41,7 @@
   </div>
 
   <!-- Intégration du formulaire Microsoft Forms -->
-  <iframe id="myForm" src="https://forms.office.com/r/ton-lien-ici" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+  <https://docs.google.com/forms/d/e/1FAIpQLSdWKm14RDFG5JtztriZ_U8OCnJZ4cyIHvzvYBRd6Dqt8nGxkQ/viewform?usp=dialog width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
 
   <script>
     function toggleForm() {
@@ -55,4 +55,5 @@
   </script>
 
 </body>
+
 </html>
