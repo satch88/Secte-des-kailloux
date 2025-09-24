@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejoindre la secte</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+    }
+    .center {
+      margin-bottom: 20px;
+    }
+    iframe {
+      display: none; /* Masqué au départ */
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #6a0dad;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #580a9d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center">
+    <button onclick="toggleForm()">Rejoindre la secte</button>
+  </div>
+
+  <!-- Intégration du formulaire Microsoft Forms -->
+  <iframe id="myForm" src="https://forms.office.com/r/ton-lien-ici" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById('myForm');
+      if (form.style.display === 'none' || form.style.display === '') {
+        form.style.display = 'block';
+      } else {
+        form.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
