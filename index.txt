@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Secte des Kailloux</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #444;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: .5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .center {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    button {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #666;
+    }
+    form {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 1rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: .8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    #adherents {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #adherents h2 {
+      text-align: center;
+      color: #444;
+    }
+    #liste {
+      list-style: none;
+      padding: 0;
+    }
+    #liste li {
+      padding: .5rem;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>✨ La Secte des Kailloux ✨</h1>
+    <p>Rejoins-nous et rends hommage aux cailloux sacrés.</p>
+  </header>
+
+  <section class="gallery">
+    <img src="https://picsum.photos/400/300?random=10" alt="Caillou 1">
+    <img src="https://picsum.photos/400/300?random=11" alt="Caillou 2">
+    <img src="https://picsum.photos/400/300?random=12" alt="Caillou 3">
+    <img src="https://picsum.photos/400/300?random=13" alt="Caillou 4">
+  </section>
+
+  <div class="center">
+    <button onclick="toggleForm()">Rejoindre la secte</button>
+  </div>
+
+  <form id="formulaire" onsubmit="ajouterAdherent(event)">
+    <input type="text" id="prenom" placeholder="Prénom" required>
+    <input type="text" id="nom" placeholder="Nom" required>
+    <button type="submit">S'inscrire</button>
+  </form>
+
+  <section id="adherents">
+    <h2>Liste des adhérents</h2>
+    <ul id="liste">
+      <!-- Les adhérents apparaîtront ici -->
+    </ul>
+  </section>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById("formulaire");
+      form.style.display = (form.style.display === "flex") ? "none" : "flex";
+    }
+
+    function ajouterAdherent(event) {
+      event.preventDefault();
+      const prenom = document.getElementById("prenom").value.trim();
+      const nom = document.getElementById("nom").value.trim();
+      if(prenom && nom) {
+        const liste = document.getElementById("liste");
+        const li = document.createElement("li");
+        li.textContent = prenom + " " + nom;
+        liste.appendChild(li);
+        document.getElementById("formulaire").reset();
+        document.getElementById("formulaire").style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
